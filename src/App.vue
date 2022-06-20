@@ -108,7 +108,7 @@ h3 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.699);
+  background-color: rgba(0, 0, 0, 0.055);
 }
 
 .searchInput {
