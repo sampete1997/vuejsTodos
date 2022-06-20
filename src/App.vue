@@ -123,8 +123,6 @@ h3 {
   width: 50%;
   background-color: rgba(218, 218, 218, 0.226);
   padding: 0.4rem;
-
   border-radius: 0.5rem;
-  box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.363);
 }
 </style>
