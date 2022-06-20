@@ -75,7 +75,6 @@ export default {
 .v-card {
   background-image: url('https://thumbs.dreamstime.com/z/old-paper-flower-background-frame-4289123.jpg');
   background-size: cover;
-  background-position: center;
   width: 50%;
   margin: 0 auto;
   padding: 1rem;
@@ -98,13 +97,13 @@ h2 {
 
 h4 {
   margin-top: 1.5rem;
-  color: rgba(0, 0, 0, 0.767);
+  color: rgba(0, 0, 0, 0.925);
   font-weight: 900;
 }
 
 h3 {
   margin-top: 1.5rem;
-  color: rgba(7, 7, 7, 0.829);
+  color: rgba(7, 7, 7, 0.904);
 
 }
 
@@ -120,7 +119,7 @@ h3 {
   margin-top: 2rem;
   border: 1px solid rgba(0, 0, 0, 0.425);
   width: 50%;
-  background-color: rgba(218, 218, 218, 0.26);
+  background-color: rgba(218, 218, 218, 0.226);
   padding: 0.4rem;
 
   border-radius: 0.5rem;
