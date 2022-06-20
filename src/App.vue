@@ -80,8 +80,11 @@ export default {
   margin-bottom: 2rem;
   margin-top: 2rem;
   height: auto;
- 
- 
+  
+}
+
+.v-card:hover{
+  transform: scale(1.1);
 }
 
 .card div {
