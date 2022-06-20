@@ -55,17 +55,16 @@ export default {
 <template >
   <div class="container">
     <input class="searchInput" type="text" placeholder="Search" v-model="search" />
-    <v-layout v-for="item in filteredPosts" :key="item.title">
+    <div v-for="item in filteredPosts" :key="item.title">
       <v-card class="card" max-width="600">
         <div>
-
           <h2>{{ userNameObj[item.userId] }}</h2>
           <h3>{{ item.title }}</h3>
           <h4>{{ item.body }}</h4>
         </div>
       </v-card>
 
-    </v-layout>
+    </div>
 
   </div>
 
