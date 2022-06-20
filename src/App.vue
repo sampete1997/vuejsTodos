@@ -54,7 +54,7 @@ export default {
 
 <template >
   <div class="container">
-    <input class="searchInput" type="text" placeholder="search" v-model="search" />
+    <input class="searchInput" type="text" placeholder="Search" v-model="search" />
     <v-layout v-for="item in filteredPosts" :key="item.title">
       <v-card class="card">
         <div>
@@ -64,6 +64,7 @@ export default {
           <h4>{{ item.body }}</h4>
         </div>
       </v-card>
+
     </v-layout>
 
   </div>
@@ -71,15 +72,17 @@ export default {
 </template>
 
 <style>
-
-
-.card {
-  /* background-image: linear-gradient(rgb(253, 253, 253),rgb(243, 221, 179), rgb(0, 72, 255)); */
-  width: 70%;
+.v-card {
+  background-image: url('https://thumbs.dreamstime.com/z/old-paper-flower-background-frame-4289123.jpg');
+  background-size: cover;
+  background-position: center;
+  width: 50%;
   margin: 0 auto;
   padding: 1rem;
   margin-bottom: 2rem;
   margin-top: 2rem;
+  height: auto;
+ 
 }
 
 .card div {
@@ -89,17 +92,19 @@ export default {
   text-align: center;
 }
 
-
+h2 {
+  color: red
+}
 
 h4 {
   margin-top: 1.5rem;
-  color: rgba(7, 7, 7, 0.63);
+  color: rgba(0, 0, 0, 0.767);
   font-weight: 900;
 }
 
 h3 {
   margin-top: 1.5rem;
-    color: rgba(7, 7, 7, 0.795);
+  color: rgba(7, 7, 7, 0.829);
 
 }
 
@@ -108,14 +113,17 @@ h3 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.055);
+
 }
 
 .searchInput {
   margin-top: 2rem;
   border: 1px solid rgba(0, 0, 0, 0.425);
-  width: 40%;
-  background-color: white;
-  padding: 0.3rem;
+  width: 50%;
+  background-color: rgba(218, 218, 218, 0.26);
+  padding: 0.4rem;
+
+  border-radius: 0.5rem;
+  box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.363);
 }
 </style>
