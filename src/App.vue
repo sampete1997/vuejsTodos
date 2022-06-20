@@ -56,7 +56,7 @@ export default {
   <div class="container">
     <input class="searchInput" type="text" placeholder="Search" v-model="search" />
     <v-layout v-for="item in filteredPosts" :key="item.title">
-      <v-card class="card">
+      <v-card class="card" max-width="600">
         <div>
 
           <h2>{{ userNameObj[item.userId] }}</h2>
@@ -75,12 +75,12 @@ export default {
 .v-card {
   background-image: url('https://thumbs.dreamstime.com/z/old-paper-flower-background-frame-4289123.jpg');
   background-size: cover;
-  width: 50%;
   margin: 0 auto;
   padding: 1rem;
   margin-bottom: 2rem;
   margin-top: 2rem;
   height: auto;
+ 
  
 }
 
