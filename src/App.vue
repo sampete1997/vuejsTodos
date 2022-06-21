@@ -1,3 +1,22 @@
+
+<template >
+  <div class="container">
+    <input class="searchInput" type="text" placeholder="Search" v-model="search" />
+    <div v-for="item in filteredPosts" :key="item.title">
+      <v-card class="card" max-width="600">
+        <div>
+          <h2>{{ userObj[item.userId] }}</h2>
+          <h3>{{ item.title }}</h3>
+          <h4>{{ item.body }}</h4>
+        </div>
+      </v-card>
+
+    </div>
+
+  </div>
+
+</template>
+
 <script>
 import axios from 'axios';
 
@@ -8,37 +27,45 @@ export default {
       search: "",
       posts: [],
       users: [],
-      userNameObj: {}
+      userObj: {}
 
     }
   },
+  created() {
 
-  mounted() {
-
-    axios
-      .get('https://jsonplaceholder.typicode.com/users')
+    this.fetchUserData()
       .then(response => response.data)
       .then(data => {
 
-
         data.map((currUser) => {
 
-          return this.userNameObj[currUser.id] = currUser.name
+          return this.userObj[currUser.id] = currUser.name
         })
 
-        console.log('user', this.userNameObj);
+        console.log('user', this.userObj);
         return (this.users = data)
       })
       .catch((err) => console.log('err:', err))
 
-    axios
-      .get('https://jsonplaceholder.typicode.com/posts')
+    this.fetchPostData()
       .then(response => response.data)
       .then(data => {
         console.log('fetched data', data);
         return (this.posts = data)
       })
       .catch((err) => console.log('err:', err))
+
+  },
+
+  methods: {
+
+    fetchUserData() {
+      return axios.get('https://jsonplaceholder.typicode.com/users')
+    }
+    ,
+    fetchPostData() {
+      return axios.get('https://jsonplaceholder.typicode.com/posts')
+    }
 
 
   },
@@ -52,24 +79,6 @@ export default {
 }
 </script>
 
-<template >
-  <div class="container">
-    <input class="searchInput" type="text" placeholder="Search" v-model="search" />
-    <div v-for="item in filteredPosts" :key="item.title">
-      <v-card class="card" max-width="600">
-        <div>
-          <h2>{{ userNameObj[item.userId] }}</h2>
-          <h3>{{ item.title }}</h3>
-          <h4>{{ item.body }}</h4>
-        </div>
-      </v-card>
-
-    </div>
-
-  </div>
-
-</template>
-
 <style>
 .v-card {
   background-image: url('https://thumbs.dreamstime.com/z/old-paper-flower-background-frame-4289123.jpg');
@@ -79,10 +88,10 @@ export default {
   margin-bottom: 2rem;
   margin-top: 2rem;
   height: auto;
-  
+
 }
 
-.v-card:hover{
+.v-card:hover {
   transform: scale(1.1);
 }
 
@@ -123,8 +132,6 @@ h3 {
   width: 50%;
   background-color: rgba(218, 218, 218, 0.226);
   padding: 0.4rem;
-
   border-radius: 0.5rem;
-  box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.363);
 }
 </style>
